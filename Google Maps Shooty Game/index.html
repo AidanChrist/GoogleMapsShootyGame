@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+
+    <title>Final Project</title>  
+	
+	<link rel="manifest" href="manifest.json">
+    
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+    
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCf7n4nhvHEbSMy4xJ61Vc5Dwt8iHk5RYA&libraries=places"></script>
+
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <div id="startScreen">
+      <div id="title">
+        Google Maps
+        <br>
+        Shooty Game
+      </div>
+      <br>
+      <br>
+      <button class="pushable" onclick="chooseLocation()">
+        <span class="front">
+          Play
+        </span>
+      </button>
+      
+      <button class="pushable">
+        <span class="front"  id="inst" onclick="instructions()">
+          Instructions
+        </span>
+      </button>
+      
+      <button class="pushable">
+        <span class="front"  id="lr" onclick="lore()">
+          Lore
+        </span>
+      </button>
+      <br><br><br>
+      <div id="stats">
+        <img src = "https://cdn.glitch.com/81c9df27-eeec-4c4f-9d72-4c376c276d33%2FNew%20Piskel%20(3).gif?v=1623268932835">
+        <br>
+        <b id="level">Level 1</b>
+        <br><br>
+        <u>Upgrades</u>
+        <br><br>
+        <div id="fpros">
+          <img class="upgrade" src = "https://cdn.glitch.com/81c9df27-eeec-4c4f-9d72-4c376c276d33%2FNew%20Piskel.png?v=1623568030806"> Found at the Eiffel Tower
+        </div>
+        <div id="ggun">
+          <img class="upgrade" src = "https://cdn.glitch.com/81c9df27-eeec-4c4f-9d72-4c376c276d33%2FNew%20Piskel.png?v=1623568030806"> Found at Mount Douglas Secondary School 
+        </div>
+        <div id="eshld">
+          <img class="upgrade" src = "https://cdn.glitch.com/81c9df27-eeec-4c4f-9d72-4c376c276d33%2FNew%20Piskel.png?v=1623568030806"> Found at the Great Wall of China
+        </div>
+        <div id="tp">
+          <img class="upgrade" src = "https://cdn.glitch.com/81c9df27-eeec-4c4f-9d72-4c376c276d33%2FNew%20Piskel.png?v=1623568030806"> Found at the Pyramid of Giza
+        </div>
+        <div id="qs">
+          <img class="upgrade" src = "https://cdn.glitch.com/81c9df27-eeec-4c4f-9d72-4c376c276d33%2FNew%20Piskel.png?v=1623568030806"> Found at Buckingham Palace
+        </div>
+        </div>
+      <br>
+      <button class="pushable">
+        <span class="front" id="sv">
+          Save
+        </span>
+      </button>
+      
+      <button class="pushable">
+        <span class="front" id="ld">
+          Load
+        </span>
+      </button>
+      <br><br>
+      <button class="pushable" onclick="mobileControls()">
+        <span class="front" id="mc">
+          Touch Controls: Off
+        </span>
+      </button>
+      
+    </div>
+    
+    
+    <div id="instructions">
+      <p>
+        Press WASD or use Touch Controls to move
+        <br><br>
+        Click or tap to shoot in that direction
+        <br><br>
+        Shoot at Enemies to gain XP
+        <br><br>
+        If enemies hit you, you lose HP and
+        <br>
+        if your HP drops to 0 you lose your XP
+        <br><br><br>
+        Your goal is to kill the monster that
+        <br>
+        resides in Buckingham Palace,
+        <br>
+        but you might want to find some upgrades first
+      </p>
+      <button class="pushable" onclick="mainMenu()">
+        <span class="front">
+          Main Menu
+        </span>
+      </button>
+    </div>
+    
+    
+    <div id="lore">
+      <p>
+        <br><br><br>
+        April 21, 2026
+        <br><br>
+        A monster living among the people of Earth
+        <br>
+        turned 100 years old and unleashed her rage.
+        <br><br>
+        All of humanity was wiped out and
+        <br>
+        humans were extirpated from Earth.
+        <br><br>
+        However, Elon Musk and a few Astronauts
+        <br>
+        launched themselves on a rocket headed for Mars
+        <br>
+        one year before the calamity.
+        <br><br>
+        After landing on Mars,
+        <br>
+        Elon Musk constructed a drone that 
+        <br>
+        could slay the monster and avenge humanity.
+        <br><br>
+        
+      </p>
+      <button class="pushable" onclick="mainMenu()">
+        <span class="front">
+          Main Menu
+        </span>
+      </button>
+    </div>
+    
+    
+    <div id="cmap">
+      
+    </div>
+    
+    <div id="whereWeDropping">
+      <b><u>Where are we dropping boys?</u></b>
+    </div>
+    
+    <div id="info">
+      
+    </div>
+    
+    <div id="map">
+      
+    </div>
+    
+    <div id="pause" onclick="menu()">
+      <b>Menu</b>
+    </div>
+    
+    <div id="menu">
+      <br>
+      <b>Paused</b>
+      <br>
+      <button class="pushable" onclick="resume()">
+        <span class="front">
+          Resume
+        </span>
+      </button>
+      
+      <button class="pushable" onclick="warp()">
+        <span class="front">
+          Warp
+        </span>
+      </button>
+      
+      <button class="pushable" onclick="mainMenu()">
+        <span class="front">
+          Main Menu
+        </span>
+      </button>
+      
+    </div>
+    
+    <div id="lv">Level 1</div>
+    
+    <div id="ui">
+      
+      <div id="hp"></div>
+
+      <div id="xp"></div>
+    </div>
+    
+    <div id="bossUi">
+      <div id="bossBar"><b>Boss_Health</b></div>
+    </div>
+    
+    <div id="buttons">
+        <img id="up" src="https://cdn.glitch.com/81c9df27-eeec-4c4f-9d72-4c376c276d33%2Fup.png?v=1623785979887" onmousedown="mobile('up')" onmouseup="unmobile('up')" ontouchstart="mobile('up')" ontouchend="unmobile('up')">
+      <br>
+       <img id="left" src="https://cdn.glitch.com/81c9df27-eeec-4c4f-9d72-4c376c276d33%2Fleft.png?v=1623785987872" onmousedown="mobile('left')" onmouseup="unmobile('left')" ontouchstart="mobile('left')" ontouchend="unmobile('left')">
+       <img id="down" src="https://cdn.glitch.com/81c9df27-eeec-4c4f-9d72-4c376c276d33%2Fdown.png?v=1623785991988" onmousedown="mobile('down')" onmouseup="unmobile('down')" ontouchstart="mobile('down')" ontouchend="unmobile('down')">
+       <img id="right" src="https://cdn.glitch.com/81c9df27-eeec-4c4f-9d72-4c376c276d33%2Fright.png?v=1623785996094" onmousedown="mobile('right')" onmouseup="unmobile('right')" ontouchstart="mobile('right')" ontouchend="unmobile('right')">
+    </div>
+    
+    <div id="pbuttons">
+       <img src="https://cdn.glitch.com/81c9df27-eeec-4c4f-9d72-4c376c276d33%2Fhorse.png?v=1622239936981">
+       <img src="https://cdn.glitch.com/81c9df27-eeec-4c4f-9d72-4c376c276d33%2Fhorse.png?v=1622239936981">
+       <img src="https://cdn.glitch.com/81c9df27-eeec-4c4f-9d72-4c376c276d33%2Fhorse.png?v=1622239936981">
+    </div>
+    
+    <div id="devButtons">
+      <button onclick="moveUp()">
+      Move Up
+      </button>
+      <br>
+      <button onclick="moveLeft()">
+        Move Left
+      </button>
+      <button onclick="moveRight()">
+        Move Right
+      </button>
+      <br>
+      <button onclick="moveDown()">
+        Move Down
+      </button>
+      <button onclick="search()">
+        Search
+      </button>
+      <button onclick="stopGame()">
+        Stop
+      </button>
+      <button onclick="kill()">
+        Kill
+      </button>
+      <button onclick="logCoords()">
+        Log
+      </button>
+    </div>
+    
+    
+  </body>
+</html>
